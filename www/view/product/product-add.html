@@ -1,0 +1,70 @@
+<ion-view view-title="新增商品">
+  <ion-content class="has-footer">
+    <div class="list">
+
+      <div class="item item-thumbnail-left item-icon-right stable-bg"  >
+        <img class="product-image" src="view/product/img/supplier_icon.png" alt="" ng-click="showActionSheet()" ng-if="product.Images.length < 3">
+        <img class="product-image" alt="" ng-repeat="image in product.Images" ng-src="{{image}}">
+        <i class="icon" ><h6>上传照片</h6></i>
+      </div>
+      <div class="item item-input item-icon-right">
+        <label style="display:flex; width: 100%;padding-top:2px;padding-bottom: 2px;">
+          <span class="input-label">条码</span>
+          <input type="number" placeholder="输入商品条码">
+        </label>
+        <i class="icon ion-qr-scanner energized" ng-click="scanBarcode()"></i>
+      </div>
+
+      <label class="item item-input" for="">
+        <span class="input-label">名称<span class="energized">*</span></span>
+        <input type="text">
+      </label>
+      <div class="item item-icon-right" ui-sref="app.category-list">
+        分类
+        <span class="item-note">{{product.Category.Name}}</span>
+        <i class="icon icon-chevron-right icon-accessory"></i>
+      </div>
+    </div>
+    <div class="list">
+      <label class="item item-input" for="">
+        <span class="input-label">售价<span class="energized">*</span></span>
+        <input type="text">
+      </label>
+      <label class="item item-input" for="">
+        <span class="input-label">进价<span class="energized">*</span></span>
+        <input type="text">
+      </label>
+      <label class="item item-input" for="">
+        <span class="input-label">库存<span class="energized">*</span></span>
+        <input type="text" placeholder="输入商品库存">
+        <input type="text">
+      </label>
+      <label class="item item-input" for="">
+        <span class="input-label">规格<span class="energized">*</span></span>
+        <input type="text" placeholder="规格 型号 尺码">
+        <input type="text">
+      </label>
+      <label class="item item-input" for="">
+        <span class="input-label">备注<span class="energized">*</span></span>
+        <input type="text" placeholder="输入商品备注">
+        <input type="text">
+      </label>
+      <label class="item item-input item-icon-right" ng-click="selectSupplier()" for="">
+        <span class="input-label">供应商<span class="energized">*</span> </span>
+        <span class="item-note">{{product.Supplier.Name}}</span>
+        <i class="icon icon-chevron-right icon-accessory"></i>
+        <input type="text">
+      </label>
+
+    </div>
+  </ion-content>
+
+
+<div class="bar bar-footer bar-energized">
+<div class="button-bar">
+  <button class="button button-clear light">完成</button>
+  <button class="button button-clear light">继续添加</button>
+</div>
+</div>
+
+</ion-view>

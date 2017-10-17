@@ -1,0 +1,35 @@
+<ion-view view-title="商品管理">
+  <ion-header-bar class="bar-subheader item-input-inset bar-stable">
+    <label class="item-input-wrapper light-bg">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" placeholder="请输入商品名称查询"
+             ng-model="searchMV.content" ng-change="getByName()">
+    </label>
+  </ion-header-bar>
+
+
+  <ion-content class="has-subheader">
+    <ion-refresher on-refresh="doRefresh()" pulling-text="下拉可以刷新" refreshing-text="正在加载中……"></ion-refresher>
+    <div class="row row-center" style="justify-content: space-between;">
+      总共库存{{'10'}}件,总成本{{'350.00'}}元
+      <div class="buttons">
+        <button class="button button-small button-clear">
+          <i class="icon ion-ios-bell energized"></i>
+        </button>
+        <button class="button button-small button-clear" ui-sref="app.product-add">
+          <i class="icon ion-plus energized"></i>
+        </button>
+      </div>
+    </div>
+    <ul class="list" ng-if="products.length > 0 ">
+      <li class="item item-thumbnail-left item-icon-right" ng-repeat="item in products">
+        <img ng-src="{{item.Images[0]}}" ng-if="item.Images.length > 0">
+        <img src="view/product/img/c_goodspicture.png" ng-if="item.Images.length == 0">
+        <h2>{{item.Name}}</h2>
+        <p ><span class="energized">{{item.Price}}</span> </p>
+        <p>条形码:<span>{{item.Barcode}}</span>&nbsp;&nbsp;库存: <span>{{item.Stock}}</span></p>
+        <i class="icon ion-ios-arrow-thin-right"></i>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>

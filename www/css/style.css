@@ -1,0 +1,63 @@
+/* Empty. Add your own CSS if you like */
+.margin-left{
+  margin-left:10px;
+}
+
+.side-menu li{
+  border-left: none;
+  background-color: rgb(78,78,78);
+}
+
+.side-background{
+  background-color: rgb(78,78,78);
+}
+
+
+.side-menu li i{
+  font-size:medium!important;
+}
+
+.image-title{
+  height: 33%;
+}
+
+.col-border{
+  border:solid 1px #ececec;
+  border-right-style:none ;
+  border-bottom-style: none;
+}
+.col-border:last-child{
+  border-right:solid 1px #ececec;
+}
+.row:last-child .col-border{
+  border-bottom: solid 1px #ececec;
+}
+.quick-actions{
+  display: table;
+}
+.quick-action-item{
+  width:25vw;
+  height: 25vw;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.margin-left{
+  margin-left: 10px;
+}
+.on-right{
+  margin-left:40%;
+  width:60%
+}
+
+.active-item{
+  background-color:#fff;
+  border-left-color: #ff6A3C;
+  border-left-width: 4px;
+  border-left-style:solid;
+}
+
+.product-image{
+  max-height: 80px;
+  max-width: 80px;
+}
